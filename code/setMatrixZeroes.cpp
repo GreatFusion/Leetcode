@@ -42,6 +42,7 @@ public:
 			}
 		}
 
+		// solution 1: iterate all elements in the matrix, then set it to zero by the value of first row or first col.
 		for (int i = 1; i < rows;i++)
 		{
 			for (int j = 1;j < cols;j++)
@@ -50,7 +51,9 @@ public:
 					matrix[i][j] = 0;
 			}
 		}
-
+ 
+        // solution 2: only iterate first row and first col, then decide which elements should be set to zero
+        // This way has improved time efficiency in performace.		
 		if (shouldFirstRowSetToZero)
 			for (int i = 0;i < cols;i++)
 				matrix[0][i] = 0;
