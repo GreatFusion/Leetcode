@@ -51,9 +51,29 @@ public:
 					matrix[i][j] = 0;
 			}
 		}
- 
-        // solution 2: only iterate first row and first col, then decide which elements should be set to zero
-        // This way has improved time efficiency in performace.		
+		// end of solution 1
+
+		// solution 2: only iterate first row and first col, then decide which elements should be set to zero
+		// This way has improved time efficiency in performace.	
+		for (int i = 0;i < cols;i++)
+		{
+			if (matrix[0][i] == 0)
+			{
+				for (int j = 1;j < rows;j++)
+					matrix[j][i] = 0;
+			}
+		}
+
+		for (int i = 0;i < rows;i++)
+		{
+			if (matrix[i][0] == 0)
+			{
+				for (int j = 1;j < cols;j++)
+					matrix[i][j] = 0;
+			}
+		}
+		// end of solution 2
+		
 		if (shouldFirstRowSetToZero)
 			for (int i = 0;i < cols;i++)
 				matrix[0][i] = 0;
